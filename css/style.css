@@ -1,0 +1,318 @@
+html {
+	box-sizing: border-box;
+}
+
+::before,
+::after {
+	box-sizing: inherit;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: local('Open Sans Bold'), local('OpenSans-Bold'),
+		url('../fonts/OpenSans-Bold.woff') format('woff'),
+    url('../fonts/OpenSans-Bold.woff2') format('woff2');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: local('Open Sans Italic'), local('OpenSans-Italic'),
+		url('../fonts/OpenSans-Italic.woff') format('woff'),
+		url('../fonts/OpenSans-Italic.woff2') format('woff2');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: local('Open Sans Regular'), local('OpenSans-Regular'),
+		url('../fonts/OpenSans-Regular.woff') format('woff'),
+		url('../fonts/OpenSans-Regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+		url('../fonts/OpenSans-SemiBold.woff') format('woff'),
+		url('../fonts/OpenSans-SemiBold.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: local('Muller Regular'), local('MullerRegular'),
+      url('../fonts/MullerRegular.woff2') format('woff2'),
+      url('../fonts/MullerRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+	--font-family: 'Open Sans', sans-serif;
+	--background-color-black: #000;
+	--background-color-white: #FFF;
+	--font-weight: normal;
+	--font-size: 16px;
+	--line-height: 32px;
+	--color: #333;
+	--color-white: #FFF;
+	--color--btn-mainPurple: #9D5CD0;
+	--color-hover-outlineInside: #D1A9F0;
+	--color-focus-outlineOtside: #C283F3;
+	--color-active-main: #7943A4;
+	--color-peach-background: #D88F99;
+
+
+
+}
+
+body {
+	font-family: var(--font-family);
+	font-weight: var(--font-weight);
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+	color: var(--color);
+	background-color: var(--background-color-white) ;
+}
+
+a {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	margin-block-start: 0;
+	margin-block-end: 0;
+	padding-inline-start: 0;
+}
+
+li {
+	list-style: none;
+}
+
+button {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 160px;
+	max-width: 1602px;
+}
+
+.header__container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.header__container-top {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background-color: var(--background-color-black);
+}
+
+.header__link {
+	display: flex;
+	margin-right: 180px;
+	align-self: center;
+}
+
+.header__logo {
+	max-width: 173px;
+	max-height: 40px;
+}
+
+.header__nav {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.header__nav-list {
+	display: flex;
+	margin-right: 50px;
+	/* margin-right: 279px; */
+}
+
+.header__nav-item:not(:last-child) {
+	margin-right: 62px;
+}
+
+.header__nav-link {
+	color: var(--color-white);
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 24.51px;
+}
+
+.header__btn-link {
+	display: flex;
+	align-items: center;
+	color: var(--color-white);
+	font-size: 18px;
+	line-height: 24.51px;
+}
+
+.header__btn-link svg {
+	padding-right: 6px;
+}
+
+.header__btn {
+	display: none;
+}
+
+.header__btn-burger {
+	display: none;
+}
+
+.header__container-bottom {
+	position: relative;
+	padding-top: 19px;
+	padding-bottom: 19px;
+}
+
+.header__container-bottom::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: black;
+opacity: 40%;
+}
+
+.header__select-list {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* Choices */
+.choices__inner {
+	background-color: transparent;
+	padding: 0;
+	min-height: auto;
+	width: 100%;
+	border: none;
+}
+
+.choices[data-type*=select-one] .choices__inner {
+	padding-bottom: 0;
+}
+
+.choices[data-type*=select-one]:after,
+.choices[data-type*=select-one].is-open:after {
+	width: 6px;
+	height: 6px;
+	right: 2.5px;
+	border-bottom: none;
+	border-left: none;
+	border-top: 1.5px solid var(--color-white);
+	border-right: 1.5px solid var(--color-white);
+	margin-top: -4.5px;
+}
+
+.choices[data-type*=select-one]:after {
+	transform: rotate(135deg);
+}
+
+.choices[data-type*=select-one].is-open:after {
+	transform: rotate(-45deg);
+	margin-top: -1.5px;
+}
+
+.is-open .choices__list--dropdown {
+	border-color: transparent;
+}
+
+.choices__list--dropdown {
+	padding: 40px 20px 40px;
+	width: 300px;
+	height: 220px;
+	border: none;
+	top: 54px;
+	background: rgba(0, 0, 0, 0.6);
+	overflow: hidden;
+}
+
+.choices__item {
+	width: inherit;
+	font-size: 18px;
+	font-family: var(--font-family);
+	color: var(--color-white);
+	z-index: 5;
+
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+	background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4)), url(.jpg);
+	border: 2px solid var(--color--btn-mainPurple);
+}
+
+.choices__list--single {
+	padding: 0;
+	padding-right: 13px;
+}
+
+.choices__list--dropdown .choices__item--selectable:not(:last-child) {
+	margin-bottom: 20px;
+	margin-right: 20px;
+}
+
+
+#choices--scroll-item-choice-1,
+#choices--scroll-item-choice-2,
+#choices--scroll-item-choice-3 {
+	width: 220px;
+	background-color: var(--color-peach-background);
+	background-image: url(../img/Realism-choice-1.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.choices__placeholder {
+	opacity: 1;
+}
+
+.choices .choices__list .choices__list .choices__item--disabled {
+	opacity: 0;
+	display: none;
+}
+
+.choices__list--dropdown .choices__list {
+	height: 100%;
+}
+
+.choices__list--dropdown .choices__list {
+	height: 100%;
+	padding: 0;
+	padding-right: 19px;
+}
+
+.limited-handles .os-scrollbar-vertical .os-scrollbar-track .os-scrollbar-handle {
+	max-height: 20%;
+	min-height: 28px;
+}
+
+
