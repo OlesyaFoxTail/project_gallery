@@ -1,68 +1,56 @@
 
- const newSelect = () => {
-  const elements = document.querySelectorAll('.header__select-select');
-  elements.forEach(el => {
-    const choices = new Choices(el, {
-      searchEnabled: false,
-      position: 'relative',
-      searchChoices: true,
-      itemSelectText: '',
-      visibility: 'visible',
-    });
-  });
-};
-
-newSelect();
-
-
 document.addEventListener("DOMContentLoaded", function() {
-  //The first argument are the elements to which the plugin shall be initialized
-  //The second argument has to be at least a empty object or a object with your desired options
-  OverlayScrollbars(document.querySelectorAll(".choices__list--dropdown .choices__list"), {
-    className: "os-theme-thin-dark limited-handles" ,
+  document.querySelectorAll(".header__select-btn").forEach(item => {
+  item.addEventListener("click", function() {
+    let btn = this;
+    let dropdown = this.parentElement.querySelector(".header__dropdown");
+
+    document.querySelectorAll(".header__select-btn").forEach(el => {
+      if (el !== btn) {
+        el.classList.remove(".active--btn");
+      }
+    });
+
+    document.querySelectorAll(".header--dropdown").forEach(el => {
+      if (el !== dropdown) {
+        el.classList.remove("dropdown-active");
+      }
+    })
+    dropdown.classList.toggle("dropdown-active");
+    btn.classList.toggle("active--btn");
+    btn.classList.toggle("header__select-btn");
+
+  })
+});
+
+  document.addEventListener("click", function(e) {
+    let target = e.target;
+    if (!target.closest(".header__select-list")) {
+      document.querySelectorAll(".header__dropdown").forEach(el => {
+          el.classList.remove("dropdown-active");
+      })
+      document.querySelectorAll(".header__select-btn").forEach(el => {
+          el.classList.remove("active--btn");
+      })
+    }
+  });
+
+
+
+  OverlayScrollbars(document.querySelectorAll(".header__dropdown"), {
+    className: "os-theme-thin-dark",
     overflowBehavior : {
       x : "hide",
-      y : "scroll"
+      y : "scroll",
   },
   });
 
-  OverlayScrollbars(document.querySelectorAll(".choices__list--dropdown .choices__list"), {
-    className : "os-theme-thin-dark limited-handles"
-});
-let arialabel = element.getAttribute('aria-label');
-element.closest('.choices').setAttribute('aria-label', arialabel);
+  // const btnSearch = document.querySelector(".header__search");
+  // const btnClose = document.querySelector(".header__reset");
+  // const searchForm = document.querySelector(".search__form");
+
+  // btnSearch.addEventListener('click')
 
 });
-
-
-// const linkSelect = document.getElementsByClassName('.header__select-select')
-// const handleChange = (event) => {
-//   const {value} = event.target
-//   const redirectTo = `test.html`
-//   // const redirectTo = `/path/${value}`
-//   document.location.href = redirectTo
-//   linkSelect.addEventListener('change', handleChange)
-// };
-
-
-
-// Redirect
-
-// const linkSelect = document.getElementById('realism')
-
-// const handleChange = (event) => {
-//   const { value } = event.target
-//   const redirectTo = `https://youtube.com`
-//   // document.location.href = redirectTo
-//   window.location.href = redirectTo
-// select.addEventListener('change', handleChange)
-// }
-
-
-
-// let arialabel = element.getAttribute('aria-label');
-// element.closest('.choices').setAttribute('aria-label', arialabel);
-// };
-
 
 

@@ -5,17 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blanchard</title>
-  <link rel="stylesheet" href="css/choices.min.css">
   <link type="text/css" href="css/OverlayScrollbars.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="css/overlayScroll.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="css/media.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="header">
-    <div class="header__container-top">
-      <div class="container header__container">
+    <div class="header__container_top" >
+      <div class="container header__container_top-inside">
         <button class="header__btn-burger" id="burger"  aria-expanded="false" aria-haspopup="false" aria-label="Open the menu">
           <span></span>
           <span></span>
@@ -27,42 +27,42 @@
         <nav role="navigation" class="header__nav">
           <ul class="header__nav-list">
             <li class="header__nav-item">
-              <a href="" class="header__nav-link">
+              <a href="" class="link header__nav-link">
                 О нас
               </a>
             </li>
             <li class="header__nav-item">
-              <a href="" class="header__nav-link">
+              <a href="" class="link header__nav-link">
                 Галерея
               </a>
             </li>
             <li class="header__nav-item">
-              <a href="" class="header__nav-link">
+              <a href="" class="link header__nav-link">
                 Каталог
               </a>
             </li>
             <li class="header__nav-item">
-              <a href="" class="header__nav-link">
+              <a href="" class="link header__nav-link">
                 События
               </a>
             </li>
             <li class="header__nav-item">
-              <a href="" class="header__nav-link">
+              <a href="" class="link header__nav-link">
                 Издания
               </a>
             </li>
             <li class="header__nav-item">
-              <a href="" class="header__nav-link">
+              <a href="" class="link header__nav-link">
                 Проекты
               </a>
             </li>
             <li class="header__nav-item">
-              <a href="" class="header__nav-link">
+              <a href="" class="link header__nav-link">
                 Контакты
               </a>
             </li>
           </ul>
-          <a href="" class="header__btn-link">
+          <a href="" class="link header__auth-link">
             <svg width="13" height="13" viewbox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5.12056 9.09278L6.13889 10.1111L9.75 6.5L6.13889 2.88889L5.12056 3.90722L6.98389 5.77778H0V7.22222H6.98389L5.12056 9.09278ZM11.5556 0H1.44444C0.642778 0 0 0.65 0 1.44444V4.33333H1.44444V1.44444H11.5556V11.5556H1.44444V8.66667H0V11.5556C0 12.35 0.642778 13 1.44444 13H11.5556C12.35 13 13 12.35 13 11.5556V1.44444C13 0.65 12.35 0 11.5556 0Z" fill="white"/>
               </svg>
@@ -78,39 +78,166 @@
       </div>
     </div>
     <div class="header__container-bottom">
-     <div class="container header__container">
+      <div class="container header__container-bottom-inside">
         <ul class="header__select-list">
           <li class="header__select-item">
-            <select id="scroll" data-simplebar name="select" class="header__select-select" aria-label="Художники реализма">
-              <option selected disabled placeholder value="">Реализм</option>
-              <option style="background-image: url(img/Realism-choice-1.jpeg);" value="verrocchio">Верроккьо</option>
-              <option value="Leonardo">Леонардо</option>
-              <option value="Friedrich">Фридрих</option>
-              <option value="Tintoretto">Тинторетто</option>
-            </select>
+            <button class="link header__select-btn" id="realism" aria-label="Реализм">Реализм</button>
+            <div class="header__dropdown slide-bottom">
+              <ul class="header__dropdown-list">
+                <li class="header__dropdown-item" style="background-image: url(img/tinified_realism/Realism-choice-1.jpeg);">
+                  <a href="" class="header__dropdown-link">Тинторетто</a>
+                </li>
+                <li class="header__dropdown-item" style="background-image: url(img/tinified_realism/Realism-choice-2.jpeg);">
+                  <a href="" class="header__dropdown-link" >Фридрих</a>
+                </li>
+                <li class="header__dropdown-item" style="background-image: url(img/tinified_realism/Realism-choice-3.jpeg);">
+                  <a href="" class="header__dropdown-link">Леонардо</a>
+                </li>
+                <li class="header__dropdown-item" style="background-image: url(img/tinified_realism/Realism-choice-4.jpeg);">
+                  <a href="" class="header__dropdown-link">Верроккьо</a>
+                  </li>
+                <!-- <li class="header__dropdown-item" style="background-image: url(img/tinified_realism/Realism-choice-2.jpeg);">
+                  <a href="" class="header__dropdown-link">Леонардо</a>
+                </li> -->
+              </ul>
+            </div>
           </li>
           <li class="header__select-item">
-            <select name="select" class="header__select-select" aria-label="Художники импрессионизма">
-              <option selected disabled placeholder>Импрессионизм</option>
-              <option value="Monet">Моне</option>
-              <option value="Sisley">Сислей</option>
-              <option value="Manet">Мане</option>
-              <option value="Renoir">Ренуар</option>
-            </select>
+            <button class="link header__select-btn" aria-label="Импрессионизм">Импрессионизм</button>
+            <div class="header__dropdown slide-bottom">
+              <ul class="header__dropdown-list">
+                <li class="header__dropdown-item" style="background-image: url(img/tinified_impr/Impr-Mone.jpeg);" >
+                  <a href="" class="header__dropdown-link">Моне</a>
+                </li>
+                <li class="header__dropdown-item" style="background-image: url(img/tinified_impr/Impr-Sisl.jpeg);">
+                  <a href="" class="header__dropdown-link">Сислей</a>
+                </li>
+                <li class="header__dropdown-item" style="background-image: url(img/tinified_impr/Impr-Mane.jpeg);">
+                  <a href="" class="header__dropdown-link">Мане</a>
+                </li>
+                <li class="header__dropdown-item" style="background-image: url(img/tinified_impr/Impr-Renu.jpeg);">
+                  <a href="" class="header__dropdown-link">Ренуар</a>
+                  </li>
+              </ul>
+            </div>
+          </li>
+          <li class="header__select-item">
+            <button class="link header__select-btn" aria-label="Постимпрессионизм">Постимпрессионизм</button>
+            <div class="header__dropdown slide-bottom">
+              <ul class="header__dropdown-list">
+                <li class="header__dropdown-item" style="background-image: url(img/tinified-post/Post-vag.jpeg);" >
+                  <a href="" class="header__dropdown-link">Ван Гог</a>
+                </li>
+                <li class="header__dropdown-item" style="background-image: url(img/tinified-post/Post-sez.jpeg);">
+                  <a href="" class="header__dropdown-link">Сезанн</a>
+                </li>
+                <li class="header__dropdown-item" style="background-image: url(img/tinified-post/Post-gogen.jpeg);">
+                  <a href="" class="header__dropdown-link">Гоген</a>
+                </li>
+                <li class="header__dropdown-item" style="background-image: url(img/tinified-post/Post-serr.jpeg);">
+                  <a href="" class="header__dropdown-link">Сёра</a>
+                  </li>
+              </ul>
+            </div>
+          </li>
+          <li class="header__select-item">
+            <button class="link header__select-btn" aria-label="Авангард">Авангард</button>
+            <div class="header__dropdown slide-bottom">
+              <ul class="header__dropdown-list">
+                <li class="header__dropdown-item" style="background-image: url(img/tinified-ava/Avan-Kand.jpeg);" >
+                  <a href="" class="header__dropdown-link">Кандинский</a>
+                </li>
+                <li class="header__dropdown-item" style="background-image: url(img/tinified-ava/Avan-Marin.jpeg);">
+                  <a href="" class="header__dropdown-link">Маринетти</a>
+                </li>
+                <li class="header__dropdown-item" style="background-image: url(img/tinified-ava/Avan-Male.jpeg);">
+                  <a href="" class="header__dropdown-link">Малевич</a>
+                </li>
+                <li class="header__dropdown-item" style="background-image: url(img/tinified-ava/Avan-Picas.jpeg);">
+                  <a href="" class="header__dropdown-link">Пикассо</a>
+                  </li>
+              </ul>
+            </div>
+          </li>
+          <li class="header__select-item">
+            <button class="link header__select-btn" aria-label="Футуризм">Футуризм</button>
+            <div class="header__dropdown slide-bottom">
+              <ul class="header__dropdown-list">
+                <li class="header__dropdown-item" style="background-image: url(img/tinified-futur/Futur-Kar.jpeg);" >
+                  <a href="" class="header__dropdown-link">Карра</a>
+                </li>
+                <li class="header__dropdown-item" style="background-image: url(img/tinified-futur/Futur-Part.jpeg);">
+                  <a href="" class="header__dropdown-link">Прателла</a>
+                </li>
+                <li class="header__dropdown-item" style="background-image: url(img/tinified-futur/Futur-Sever.jpeg);">
+                  <a href="" class="header__dropdown-link">Северини</a>
+                </li>
+                <li class="header__dropdown-item" style="background-image: url(img/tinified-futur/Futur-Bal.jpeg);">
+                  <a href="" class="header__dropdown-link">Балла</a>
+                  </li>
+              </ul>
+            </div>
           </li>
         </ul>
+        <div class="header__search-group">
+          <button class="header__search" aria-label="Поиск" form="search" type="submit">
+            <svg width="23" height="22" viewbox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
+              <rect width="6.8678" height="1.71695" transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6533)"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0969 18C7.53041 18 3.99692 14.3229 3.99692 10C3.99692 5.67715 7.53041 2 12.0969 2C16.6634 2 20.1969 5.67715 20.1969 10C20.1969 14.3229 16.6634 18 12.0969 18ZM12.0969 20C6.57408 20 2.09692 15.5228 2.09692 10C2.09692 4.47715 6.57408 0 12.0969 0C17.6198 0 22.0969 4.47715 22.0969 10C22.0969 15.5228 17.6198 20 12.0969 20Z"/>
+            </svg>
+          </button>
+          <form action="#" class="search__form" id="search" method="GET">
+            <input class="search__form-input" type="search" placeholder="Поиск по сайту">
+            <button class="header__reset" aria-label="Сброс">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.666885 15.3045L15.3336 0.000275917L16.0002 0.695923L1.33355 16.0002L0.666885 15.3045Z" fill="black"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.666725 -2.96187e-06L15.3334 15.3042L14.6667 15.9999L5.76143e-05 0.695644L0.666725 -2.96187e-06Z" fill="black"/>
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-
-
   </header>
-  <div class="section__hero">
-    <div class="container">
-    </div>
-  </div>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="slide1 swiper-slide-cover slide-zoom"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide2 swiper-slide-cover slide-zoom"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide3 swiper-slide-cover slide-zoom"></div>
+            </div>
+          </div>
+        </div>
+        <div class="hero__text-container">
+          <h1 class="hero__title">Прикоснитесь к&nbsp;прекрасному</h1>
+          <p class="hero__descr">Мы&nbsp;вынуждены отталкиваться от&nbsp;того, что реализация намеченных плановых заданий создаёт предпосылки для новых предложений.</p>
+          <button class="btn hero__btn">Подписаться на рассылку</button>
+        </div>
+      </div>
+    </section>
+    <section class="section__about">
+      <div class="container">
+        <div class="section__about-content">
+          <h2>О нас</h2>
+          <p>
+            Ясность нашей позиции очевидна: семантический разбор внешних противодействий однозначно определяет каждого участника как способного принимать собственные решения касаемо распределения внутренних резервов и&nbsp;ресурсов. Не&nbsp;следует, однако, забывать, что высококачественный прототип будущего проекта влечет за&nbsp;собой процесс внедрения и&nbsp;модернизации модели развития. Повседневная практика показывает, что высокое качество позиционных исследований создаёт необходимость включения в&nbsp;производственный план целого ряда внеочередных мероприятий с&nbsp;учётом комплекса распределения внутренних резервов и&nbsp;ресурсов. В&nbsp;рамках спецификации современных стандартов, действия представителей оппозиции набирают популярность среди определенных слоев населения, а&nbsp;значит, должны быть разоблачены.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<script src="/script/choices.min.js"></script>
+
 <script src="script/script.js"></script>
 <script type="text/javascript" src="script/OverlayScrollbars.min.js"></script>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="script/swiper.js"></script>
 </body>
 </html>
